@@ -3,8 +3,16 @@ kind: Deployment
 metadata:
    name: chat
 spec:
-   containers:
-   - name: chat
-     image: chat
-     ports:
-     - containerPort: 3000
+      selector: 
+      matchLabels:
+         app: chat
+   template:
+      metadata:
+         labels:
+            app: chat
+      spec: 
+         containers:
+            - name: chat
+            image: cedronc/chat
+            ports:
+               - containerPort: 3000

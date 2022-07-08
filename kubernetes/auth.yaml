@@ -3,8 +3,16 @@ kind: Deployment
 metadata:
    name: auth
 spec:
-   containers:
-   - name: auth
-     image: auth
-     ports:
-     - containerPort: 3000
+   selector: 
+      matchLabels:
+         app: auth
+   template:
+      metadata:
+         labels:
+            app: auth
+      spec: 
+         containers:
+            - name: auth
+            image: cedronc/auth
+            ports:
+               - containerPort: 3000
