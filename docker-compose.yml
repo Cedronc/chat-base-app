@@ -6,7 +6,7 @@ services:
                - ./nginx/default.conf:/etc/nginx/conf.d
                - ./frontend:/var/www/static/:ro
           ports:
-               - 127.0.0.1:8000:80
+               - 127.0.0.1:8002:80
           depends_on:
                - auth
                - chat
