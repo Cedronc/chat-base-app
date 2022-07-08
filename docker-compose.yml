@@ -3,7 +3,7 @@ services:
      ingress:
           image: 'nginx'
           volumes:
-               - ./nginx.conf:/etc/nginx/nginx.conf:ro
+               - ./nginx/default.conf:/etc/nginx/conf.d
                - ./frontend:/var/www/static/:ro
           ports:
                - 127.0.0.1:8000:80
